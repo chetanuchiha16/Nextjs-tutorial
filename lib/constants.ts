@@ -1,0 +1,42 @@
+export const events = [
+    {
+        title: "Web Development Workshop",
+        image: "/images/event1.png",
+        slug: "web-development-workshop",
+        location: "San Francisco, CA",
+        date: "January 25, 2026",
+        time: "10:00 AM",
+    },
+    {
+        title: "AI & Machine Learning Summit",
+        image: "/images/event2.png",
+        slug: "ai-ml-summit",
+        location: "New York, NY",
+        date: "February 14, 2026",
+        time: "2:00 PM",
+    },
+    {
+        title: "Tech Career Fair 2026",
+        image: "/images/event3.png",
+        slug: "tech-career-fair",
+        location: "Austin, TX",
+        date: "March 10, 2026",
+        time: "9:00 AM",
+    },
+    {
+        title: "Cloud Infrastructure Conference",
+        image: "/images/event4.png",
+        slug: "cloud-infrastructure-conf",
+        location: "Seattle, WA",
+        date: "March 28, 2026",
+        time: "11:30 AM",
+    },
+    {
+        title: "Startup Pitch Night",
+        image: "/images/event5.png",
+        slug: "startup-pitch-night",
+        location: "Boston, MA",
+        date: "April 5, 2026",
+        time: "6:00 PM",
+    },
+];
