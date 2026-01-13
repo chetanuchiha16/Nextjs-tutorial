@@ -10,7 +10,7 @@ interface Props {
 }
 function EventCard({ title, image, location, slug, date, time }: Props) {
     return (
-        <Link href={`/events/${slug}`}>
+        <Link href={`/events/${slug}`} id="event-card">
             <Image
                 src={image}
                 alt={title}
@@ -28,8 +28,24 @@ function EventCard({ title, image, location, slug, date, time }: Props) {
                 <p>{location}</p>
             </div>
             <p className="title">{title}</p>
-            <p>{date}</p>
-            <p>{time}</p>
+            <div className="datetime">
+                <div>
+                    <Image
+                        src={"/icons/calendar.svg"}
+                        height={14}
+                        width={14}
+                        alt="calender"
+                    />
+                    <p>{date}</p>
+                    <Image
+                        src={"/icons/clock.svg"}
+                        height={14}
+                        width={14}
+                        alt="calender"
+                    />
+                    <p>{time}</p>
+                </div>
+            </div>
         </Link>
     );
 }
