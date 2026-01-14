@@ -13,7 +13,7 @@ async function request<T>(
         }
     })
 
-    return await response.json()
+    return response.json()
 }
 
 export const api = {

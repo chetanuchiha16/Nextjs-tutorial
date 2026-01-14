@@ -7,8 +7,9 @@ import {Suspense} from "react";
 import {eventsApi} from "@/lib/api/events";
 
 async function Root() {
-    const events: Array<IEvent> = await eventsApi.list()
-
+    "use cache";
+    const {events}: { message: string, events: Array<IEvent> } = await eventsApi.list()
+    console.log(events)
     return (
         <section>
             <h1 className={"text-center mb-5"}>The Hub for every dev</h1>
