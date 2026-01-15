@@ -24,4 +24,6 @@ export const api = {
     post: <T>(url: string, body: unknown) => {
         return request<T>(url, "POST", body)
     }
+
+    
 }
