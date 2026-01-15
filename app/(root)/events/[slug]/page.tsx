@@ -1,8 +1,9 @@
 import { eventsApi } from "@/lib/api/events";
 import { cacheLife } from "next/cache";
 import React, { Suspense } from "react";
+import EventDetails from "./EventDetails";
 
-function EventDetails({ params }: { params: Promise<{ slug: string }> }) {
+function Page({ params }: { params: Promise<{ slug: string }> }) {
     
     
     return <div>
@@ -12,4 +13,4 @@ function EventDetails({ params }: { params: Promise<{ slug: string }> }) {
     </div>;
 }
 
-export default EventDetails;
+export default Page;
