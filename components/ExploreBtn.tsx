@@ -11,7 +11,7 @@ function ExploreBtn() {
             onClick={() => console.log("explore button clicked")}>
             <a href="#events">
                 Explore events
-                <Image src={"./icons/arrow-down.svg"} alt={"arrow-down"} width={24} height={24}/>
+                <Image src={"./icons/arrow-down.svg"} alt={"arrow-down"} width={25} height={24}/>
             </a>
         </button>
     )

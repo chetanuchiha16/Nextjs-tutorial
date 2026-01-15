@@ -1,7 +1,7 @@
 import React from "react";
 import ExploreBtn from "@/components/ExploreBtn";
 import EventCard from "@/components/EventCard";
-import {events} from "@/lib/constants";
+// import {events} from "@/lib/constants";
 import {IEvent} from "@/database";
 import {Suspense} from "react";
 import {eventsApi} from "@/lib/api/events";
@@ -18,7 +18,7 @@ async function Root() {
             <div className="mt-20 space-y-7">
                 <h3>Featured events</h3>
                 <ul className="events">
-                    {events.map((event: IEvent, index: number) => (
+                    {events && events.length > 0 && events.map((event: IEvent, index: number) => (
                         <li key={index}>
                             <Suspense fallback={<div>Loading</div>}>
                                 <EventCard {...event} />
