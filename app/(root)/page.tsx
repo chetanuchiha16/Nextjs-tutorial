@@ -19,7 +19,7 @@ async function Root() {
                 <h3>Featured events</h3>
                 <ul className="events">
                     {events && events.length > 0 && events.map((event: IEvent, index: number) => (
-                        <li key={index}>
+                        <li key={index} className="list-none">
                             <Suspense fallback={<div>Loading</div>}>
                                 <EventCard {...event} />
                             </Suspense>
