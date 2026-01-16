@@ -5,9 +5,10 @@ import EventCard from "@/components/EventCard";
 import {IEvent} from "@/database";
 import {Suspense} from "react";
 import {eventsApi} from "@/lib/api/events";
-
+import { cacheLife } from "next/cache";
 async function Root() {
     "use cache";
+    cacheLife("hours")
     const {events}: { message: string, events: Array<IEvent> } = await eventsApi.list()
     console.log(events)
     return (
