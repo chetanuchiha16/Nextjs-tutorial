@@ -5,7 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import BookEvent from "@/components/BookEvent";
 import EventCard from "@/components/EventCard";
-import {getSimilarEventsBySlug} from "@/lib/actions/event.actions";
+import { getSimilarEventsBySlug } from "@/lib/actions/event.actions";
 const EventDetailItem = ({
     icon,
     alt,
@@ -47,7 +47,7 @@ export default async function EventDetails({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const { event }: { event: IEvent } = await eventsApi.get(slug);
+    const { event }  = await eventsApi.get(slug);
     const {
         description,
         image,
@@ -146,7 +146,7 @@ export default async function EventDetails({
                             </p>
                         )}
 
-                        {/* <BookEvent eventId={event._id} slug={event.slug} /> */}
+                        <BookEvent eventId={event._id.toString()} slug={event.slug} />
                     </div>
                 </aside>
             </div>
@@ -154,9 +154,13 @@ export default async function EventDetails({
             <div className="flex w-full flex-col gap-4 pt-20">
                 <h2>Similar Events</h2>
                 <div className="events">
-                    {similarEvents.length > 0 && similarEvents.map((similarEvent: IEvent) => (
-                    <EventCard key={similarEvent.title} {...similarEvent} /> 
-                    ))}
+                    {similarEvents.length > 0 &&
+                        similarEvents.map((similarEvent: IEvent) => (
+                            <EventCard
+                                key={similarEvent.title}
+                                {...similarEvent}
+                            />
+                        ))}
                 </div>
             </div>
         </section>
