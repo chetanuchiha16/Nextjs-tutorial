@@ -4,8 +4,8 @@ import React, { Suspense } from "react";
 import EventDetails from "./EventDetails";
 // "use cache"
 async function Page({ params }: { params: Promise<{ slug: string }> }) {
-    // 'use cache'
-    // cacheLife("hours")
+    'use cache'
+    cacheLife("hours")
     
     return <div>
         <Suspense fallback={<div>Loading...</div>}>

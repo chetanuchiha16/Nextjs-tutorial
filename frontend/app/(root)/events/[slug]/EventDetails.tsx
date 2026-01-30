@@ -1,5 +1,6 @@
 import { IEvent } from "@/database";
 import { eventsApi } from "@/lib/api/events";
+import { cacheLife } from "next/cache";
 import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -46,6 +47,8 @@ export default async function EventDetails({
 }: {
     params: Promise<{ slug: string }>;
 }) {
+    'use cache'
+    cacheLife("hours")
     const { slug } = await params;
     const { event }  = await eventsApi.get(slug);
     const {
