@@ -1,6 +1,6 @@
 from collections.abc import AsyncGenerator
 
-from backend.app.core.config import settings
+from app.core.config import settings
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
@@ -15,7 +15,7 @@ sessionmaker = async_sessionmaker(bind=async_engine, expire_on_commit=True)
 
 async def create_db_and_tables():
     async with async_engine.begin() as conn:
-        conn.run_sync(Base.metadata.create_all)
+        await conn.run_sync(Base.metadata.create_all)
 
 
 async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
